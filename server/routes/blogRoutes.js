@@ -11,6 +11,8 @@ const {
 const router = express.Router();
 
 router.route("/").get(getAllBlogs).post(createBlog);
-router.route("/:id").get(getBlogById).put(updateBlog).delete(deleteBlog);
+router.route("/:id").get(getBlogById)
+router.route("/update/:id").post(updateBlog);
+router.route("/delete/:id").get(getBlogById).delete(deleteBlog);
 
 module.exports = router;
